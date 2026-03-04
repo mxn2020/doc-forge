@@ -1,4 +1,5 @@
 import { Save, Share2, MoreHorizontal, MessageSquare, Clock } from "lucide-react";
+import { Button } from "@geenius-ui/react-css";
 
 export default function EditorPage() {
     return (<div style={{ display: "flex", flexDirection: "column", height: "100vh" }}>
@@ -9,10 +10,10 @@ export default function EditorPage() {
                 <span style={{ fontSize: "12px", color: "var(--color-text-tertiary)", display: "flex", alignItems: "center", gap: 4 }}><Clock size={12} /> Edited 2 hours ago</span>
             </div>
             <div style={{ display: "flex", gap: "var(--space-2)" }}>
-                <button className="btn btn-sm btn-ghost"><MessageSquare size={14} /> 3</button>
-                <button className="btn btn-sm"><Share2 size={14} /> Share</button>
-                <button className="btn btn-sm btn-primary"><Save size={14} /> Save</button>
-                <button className="btn btn-sm btn-ghost"><MoreHorizontal size={16} /></button>
+                <Button variant="ghost" size="sm"><MessageSquare size={14} /> 3</Button>
+                <Button variant="outline" size="sm" icon={<Share2 size={14} />}>Share</Button>
+                <Button variant="primary" size="sm" icon={<Save size={14} />}>Save</Button>
+                <Button variant="ghost" size="sm" icon={<MoreHorizontal size={16} />} />
             </div>
         </div>
 

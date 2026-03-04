@@ -1,0 +1,13 @@
+id: f7c65e8f-7dac-4a70-8766-b3ead447a904
+name: doc-forge
+description: React + TypeScript + Vite
+tier: prototype
+lane: oss
+priority: medium
+oss: false
+stack: [typescript, react, convex, vite]
+repo: "https://github.com/mxn2020/doc-forge"
+deploy_url: null
+last_active: 2026-02-25
+tags: []
+notes: 

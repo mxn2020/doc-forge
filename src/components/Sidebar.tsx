@@ -1,6 +1,8 @@
 import { Link, useLocation } from "react-router-dom";
-import { BookOpen, PenLine, Search, ChevronRight, FileText, Folder, Plus } from "lucide-react";
+import { BookOpen, PenLine, Search, FileText, Folder, Plus } from "lucide-react";
+import { Button, Avatar } from "@geenius-ui/react-css";
 import ThemeToggle from "./ThemeToggle";
+
 export default function Sidebar() {
     const loc = useLocation();
     const links = [
@@ -21,7 +23,7 @@ export default function Sidebar() {
         <div style={{ padding: "var(--space-3) var(--space-5)", flex: 1, overflow: "auto" }}>
             <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "var(--space-3)" }}>
                 <h3 style={{ fontSize: "11px", fontWeight: 700, color: "var(--color-text-tertiary)", textTransform: "uppercase", letterSpacing: 0.5 }}>Document Tree</h3>
-                <button className="btn-ghost" style={{ padding: 2, color: "var(--color-text-tertiary)" }}><Plus size={14} /></button>
+                <Button variant="ghost" size="sm" icon={<Plus size={14} />} />
             </div>
             <div style={{ display: "flex", flexDirection: "column", gap: 2 }}>
                 <div className="doc-tree-item"><Folder size={14} /> Engineering</div>
@@ -37,7 +39,7 @@ export default function Sidebar() {
 
         <div style={{ padding: "var(--space-4)", borderTop: "1px solid var(--color-border)", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
             <div style={{ display: "flex", alignItems: "center", gap: "var(--space-2)" }}>
-                <div style={{ width: 28, height: 28, borderRadius: "50%", background: "var(--color-accent-primary)", color: "var(--color-text-inverse)", display: "flex", alignItems: "center", justifyContent: "center", fontWeight: 700, fontSize: "11px" }}>MN</div>
+                <Avatar fallback="MN" size="sm" />
                 <span style={{ fontSize: "13px", fontWeight: 600 }}>Mehdi</span>
             </div>
             <ThemeToggle />

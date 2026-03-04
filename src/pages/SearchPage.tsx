@@ -1,4 +1,5 @@
-import { Search as SearchIcon, FileText, Clock, ArrowRight } from "lucide-react";
+import { Search as SearchIcon, FileText, Clock } from "lucide-react";
+import { Card, Input, Badge } from "@geenius-ui/react-css";
 
 export default function SearchPage() {
     const results = [
@@ -11,8 +12,8 @@ export default function SearchPage() {
         <h1 style={{ fontSize: "var(--font-size-xl)", fontWeight: 700, marginBottom: "var(--space-6)" }}>Search Documents</h1>
 
         <div style={{ position: "relative", marginBottom: "var(--space-6)" }}>
-            <SearchIcon size={20} style={{ position: "absolute", left: 16, top: "50%", transform: "translateY(-50%)", color: "var(--color-text-tertiary)" }} />
-            <input type="text" defaultValue="architecture" placeholder="Search across all documents…" style={{ width: "100%", padding: "16px 16px 16px 48px", borderRadius: "var(--radius-md)", border: "2px solid var(--color-accent-primary)", background: "var(--color-bg-card)", color: "var(--color-text-primary)", fontFamily: "inherit", fontSize: "16px", fontWeight: 500 }} />
+            <SearchIcon size={20} style={{ position: "absolute", left: 16, top: "50%", transform: "translateY(-50%)", color: "var(--color-text-tertiary)", zIndex: 1 }} />
+            <Input type="text" defaultValue="architecture" placeholder="Search across all documents…" style={{ width: "100%", paddingLeft: 48, fontSize: "16px", borderWidth: 2, borderColor: "var(--color-accent-primary)" }} />
         </div>
 
         <div style={{ fontSize: "14px", color: "var(--color-text-secondary)", marginBottom: "var(--space-4)" }}>
@@ -21,17 +22,17 @@ export default function SearchPage() {
 
         <div style={{ display: "flex", flexDirection: "column", gap: "var(--space-3)" }}>
             {results.map(r => (
-                <div key={r.title} className="card" style={{ padding: "var(--space-5)", cursor: "pointer" }}>
+                <Card key={r.title} padding="lg" hover>
                     <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "var(--space-2)" }}>
                         <div style={{ display: "flex", alignItems: "center", gap: "var(--space-2)" }}>
                             <FileText size={16} style={{ color: "var(--color-accent-primary)" }} />
                             <h3 style={{ fontWeight: 700, fontSize: "16px" }}>{r.title}</h3>
-                            <span style={{ fontSize: "12px", color: "var(--color-text-tertiary)", background: "var(--color-bg-tertiary)", padding: "2px 6px", borderRadius: 4, fontWeight: 600 }}>{r.space}</span>
+                            <Badge variant="secondary" size="sm">{r.space}</Badge>
                         </div>
                         <span style={{ fontSize: "12px", color: "var(--color-text-tertiary)", display: "flex", alignItems: "center", gap: 4 }}><Clock size={12} />{r.updated}</span>
                     </div>
                     <p style={{ color: "var(--color-text-secondary)", fontSize: "15px", fontFamily: "var(--font-serif)", lineHeight: 1.6 }}>{r.snippet}</p>
-                </div>
+                </Card>
             ))}
         </div>
     </div>);
